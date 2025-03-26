@@ -127,27 +127,6 @@ Bu oranlar `difficulty_to_random_prob` fonksiyonunda tanımlanmıştır.
 
 ---
 
-## Kod Yapısı
-
-Proje, ana işlevleri şu şekilde 6 dosyaya bölmüştür:
-
-1. **`constants.py`**  
-   - Oyunla ilgili sabit değerler (tahta boyutu, renkler, fontlar vb.).
-
-2. **`board.py`**  
-   - Tahta oluşturma, hamleleri uygulama, oyun bitiş kontrolü gibi çekirdek işlevler.
-
-3. **`draw.py`**  
-   - Pygame ile ekranı çizme, taş animasyonları, eğitimde basit çizim fonksiyonları ve “Game Over” ekranı.
-
-4. **`ai.py`**  
-   - Minimax, A*, MCTS, Q-Learning, Negamax, gelişmiş sezgisel arama, iterative deepening, move ordering gibi AI algoritmaları ve ilgili yardımcı fonksiyonlar.
-
-5. **`menu.py`**  
-   - Kullanıcı arayüzü menü ekranları (kullanıcı adı girişi, algoritma seçimi, zorluk seçimi, Q-Learning eğitim ep. sayısı vb.).
-
-6. **`main.py`**  
-   - Programın ana başlatıcısı, oyun döngüsü (`run_game`), csv kaydı, menü akışı ve `main()` fonksiyonunu içerir.
 
 ---
 
