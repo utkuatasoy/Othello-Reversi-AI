@@ -1,6 +1,5 @@
 **README.md**
 
-```markdown
 # Othello / Reversi: AI Algorithms Project
 
 Bu repo, Othello/Reversi oyununun Yapay Zeka tabanlı bir versiyonunu içerir. Proje kapsamında Minimax (Alpha-Beta Pruning dâhil), A*, Monte Carlo Tree Search (MCTS), Q-Learning, Negamax, gelişmiş sezgisel arama, Iterative Deepening ve Move Ordering gibi çeşitli algoritmalar kullanılmıştır. Ayrıca, kullanıcıya zorluk (Easy, Medium, Hard, Extreme) ve algoritma seçme imkânı sunulmuştur. Bu sayede, oyunun stratejik derinliği ve oynanabilirliği artırılmıştır.
@@ -185,9 +184,8 @@ Bu algoritmalar arasından seçim yaparak, oyunun stratejik derinliğini ve hesa
 
 ---
 
-Bu proje, **Utku Murat Atasoy** tarafından “Othello / Reversi Final Raporu: Yapay Zeka Tabanlı Oyun Stratejilerinin Karşılaştırılması” kapsamında geliştirilmiştir. Raporun detaylarında algoritmaların matematiksel temelleri ve implementasyon yaklaşımları incelenmiştir.  
 
-Herhangi bir geri bildiriminiz veya sorunuz varsa, lütfen issue açın veya pull request gönderin. Katkılarınızı bekliyoruz! 
+Herhangi bir geri bildiriminiz veya sorunuz varsa, lütfen issue açın veya pull request gönderin.
 
 Teşekkürler!
 ```
