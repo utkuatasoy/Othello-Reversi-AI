@@ -98,8 +98,10 @@ Bu oranlar `difficulty_to_random_prob` fonksiyonunda tanımlanmıştır.
 
 1. **Projeyi klonlayın** (veya zip olarak indirin):
    ```bash
-   git clone https://github.com/kullaniciadi/othello-reversi-ai.git
-   cd othello-reversi-ai
+   git clone https://github.com/utkuatasoy/Reversi-Othello-AI
+   cd Reversi-Othello-AI
+Private
+
    ```
 
 2. **Gerekli kütüphaneleri yükleyin** (öneri: sanal ortam içinde):
