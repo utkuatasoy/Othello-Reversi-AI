@@ -98,8 +98,8 @@ Bu oranlar `difficulty_to_random_prob` fonksiyonunda tanımlanmıştır.
 
 1. **Projeyi klonlayın** (veya zip olarak indirin):
    ```bash
-   git clone https://github.com/utkuatasoy/Reversi-Othello-AI
-   cd Reversi-Othello-AI
+   git clone https://github.com/utkuatasoy/Othello-Reversi-AI
+   cd Othello-Reversi-AI
 Private
 
    ```
@@ -112,7 +112,7 @@ Private
 
 3. **Projeyi çalıştırın**:
    ```bash
-   python main.py
+   python othello.py
    ```
    - Kullanıcı adı girildikten sonra algoritma seçimi menüsü gelecektir.
    - “Train Q-Learning (Visual)” seçerek görsel olarak Q-learning eğitimi yapılabilir.
