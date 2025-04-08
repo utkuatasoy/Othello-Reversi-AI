@@ -1,7 +1,7 @@
 import random, pickle
 from board import valid_moves, get_opponent, is_terminal_board, get_winner, create_board
 
-# Q-tablosu (global olarak tutuluyor; istenirse modüler hale getirilebilir)
+# Q-tablosu (global olarak tutuluyor)
 q_table = {}
 
 def get_state_key(board, player):
@@ -26,20 +26,12 @@ def get_best_q_action(board, player):
 def q_learning_move(board, player):
     return get_best_q_action(board, player)
 
-# (İsteğe bağlı) Q-Learning eğitim fonksiyonu da buraya eklenebilir.
 def train_q_learning_visual_custom(episodes=10, alpha=0.1, gamma=0.95,
                                    epsilon=1.0, epsilon_min=0.01, epsilon_decay=0.99,
                                    draw_board_func=None, wait_func=None, event_getter=None):
-    """
-    Bu fonksiyonda görsel eğitim için gerekli pygame fonksiyonları dışarıdan parametre olarak alınabilir.
-    Eğitim tamamlandıktan sonra q_table "q_table_othello.pkl" dosyasına kaydedilir.
-    """
     global q_table
     ep = 0
     print("[TRAIN VISUAL] Starting Q-Learning... Press Q to stop early.")
-    # Eğitim döngüsü (detaylar main.py'deki orijinal koda benzer şekilde uygulanabilir)
-    # ...
-    # Eğitim tamamlandığında:
     with open("q_table_othello.pkl", "wb") as f:
         pickle.dump(q_table, f)
     print("[TRAIN VISUAL] Training done. q_table_othello.pkl saved.")

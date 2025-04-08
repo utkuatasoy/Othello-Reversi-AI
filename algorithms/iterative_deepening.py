@@ -5,7 +5,7 @@ from algorithms.minimax import minimax
 def iterative_deepening_time_move(board, player, time_limit=1.0):
     start_time = time.time()
     best_move = None
-    depth = 1
+    depth = 1   # başlangıç depthi
     while True:
         current_time = time.time()
         if current_time - start_time > time_limit:

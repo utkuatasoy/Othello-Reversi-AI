@@ -2,7 +2,7 @@ import random, math
 from board import valid_moves, apply_move, is_terminal_board, get_winner, get_opponent
 
 class MCTSNode:
-    def __init__(self, board, parent=None, current_player=2, last_move=None):
+    def __init__(self, board, parent=None, current_player=2, last_move=None):   #root node
         self.board = board
         self.parent = parent
         self.current_player = current_player
@@ -12,19 +12,19 @@ class MCTSNode:
         self.visits = 0
         self.untried_moves = valid_moves(board, current_player)
     
-    def is_fully_expanded(self):
+    def is_fully_expanded(self):    # denenmeyen hamle kaldı mı? 
         return len(self.untried_moves) == 0
 
-    def ucb_score(self, c=1.4142):
+    def ucb_score(self, c=1.4142):  # childin selection score unu hesaplar
         if self.visits == 0:
             return float('inf')
         return (self.wins / self.visits) + c * math.sqrt(math.log(self.parent.visits) / self.visits)
 
-    def select_child(self):
+    def select_child(self): # ucb skorlara göre child i seçer
         return max(self.children, key=lambda c: c.ucb_score())
 
-    def expand(self):
-        if not self.untried_moves:
+    def expand(self):   # denenmemiş hamleleri dener ve yeni child node oluşturur
+        if not self.untried_moves:  # eğer hamle kalmadıysa boş hamle yapıp ağacı ilerletir ve yeni child oluşturur
             temp = self.board.copy()
             next_player = get_opponent(self.current_player)
             child = MCTSNode(temp, parent=self, current_player=next_player, last_move=None)
@@ -39,7 +39,7 @@ class MCTSNode:
         self.untried_moves.remove(move)
         return child
 
-    def rollout(self):
+    def rollout(self):  # current node dan rastgele bir hamle yapar ve oyunu oynatır
         temp = self.board.copy()
         cp = self.current_player
         while not is_terminal_board(temp):
@@ -59,13 +59,13 @@ class MCTSNode:
             return -1
         return 0
 
-    def backpropagate(self, result):
+    def backpropagate(self, result):    # simulation sonucunu geri yayar 
         self.visits += 1
         self.wins += result
         if self.parent:
             self.parent.backpropagate(result)
 
-def mcts_move(board, player, simulations=50):
+def mcts_move(board, player, simulations=50):   # main fonk
     moves = valid_moves(board, player)
     if not moves:
         return None

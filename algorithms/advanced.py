@@ -3,7 +3,7 @@ import numpy as np
 from board import valid_moves, apply_move, get_opponent, is_terminal_board
 from algorithms.minimax import evaluate_board_simple
 
-def coin_parity(board, player):
+def coin_parity(board, player): # tahtadaki taşların sayısı oyuncu vs. ai
     opp = get_opponent(player)
     player_count = (board == player).sum()
     opp_count = (board == opp).sum()
@@ -11,7 +11,7 @@ def coin_parity(board, player):
         return 0
     return 100 * (player_count - opp_count) / (player_count + opp_count)
 
-def mobility(board, player):
+def mobility(board, player):    # taş farkını % lik gönder
     opp = get_opponent(player)
     player_moves = len(valid_moves(board, player))
     opp_moves = len(valid_moves(board, opp))
@@ -19,7 +19,7 @@ def mobility(board, player):
         return 0
     return 100 * (player_moves - opp_moves) / (player_moves + opp_moves)
 
-def corners_captured(board, player):
+def corners_captured(board, player):    # köşeleri kontrol et
     opp = get_opponent(player)
     ROWS, COLUMNS = board.shape
     corners = [(0, 0), (0, COLUMNS-1), (ROWS-1, 0), (ROWS-1, COLUMNS-1)]
@@ -29,7 +29,7 @@ def corners_captured(board, player):
         return 0
     return 100 * (player_corners - opp_corners) / (player_corners + opp_corners)
 
-def stability(board, player):
+def stability(board, player):   # taşlar ne kadar sağlam
     opp = get_opponent(player)
     stable_weight = 1.0
     semi_stable_weight = 0.5
